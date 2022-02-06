@@ -19,8 +19,8 @@ function setgenre(selgenre) {
 
 
 async function getData() {
-    const api_url = "https://GunnHacks80.agastyasandhuja.repl.co/get?mood="+mood+"&genre="+genre
-    console.group(api_url)
+    //const api_url = "https://GunnHacks80.agastyasandhuja.repl.co/get?mood="+mood+"&genre="+genre
+    const api_url = "http://192.168.86.136/get?mood="+mood+"&genre="+genre
     const response = await fetch(api_url)
     const data = await response.json();
     console.log(data)
@@ -28,9 +28,15 @@ async function getData() {
     info = data
     for (var i=0; i<info["songs"].length; i++) {
         const frame = document.createElement("iframe");
-        const node = document.createTextNode("<iframe src='https://open.spotify.com/embed/track/"+info["songs"][i]["id"]+" width='300' height='380 frameborder='0' allowtransparency='true' allow='encrypted-media' </iframe>")
+        frame.src = "https://open.spotify.com/embed/track/"+info["songs"][i]["id"]
+        frame.width = 300
+        frame.height = 380
+        frame.frameBorder = 0
+        frame.allowtransparency = true
+        frame.allow = 'encrypted-media'
+        console.log(i);
+        document.getElementById("result").appendChild(frame)
     }
-    console.log("a")
     //<iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 }
   
