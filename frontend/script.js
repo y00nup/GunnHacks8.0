@@ -19,8 +19,7 @@ function setgenre(selgenre) {
 
 
 async function getData() {
-    //const api_url = "https://GunnHacks80.agastyasandhuja.repl.co/get?mood="+mood+"&genre="+genre
-    const api_url = "http://192.168.86.136/get?mood="+mood+"&genre="+genre
+    const api_url = "https://GunnHacks80.agastyasandhuja.repl.co/get?mood="+mood+"&genre="+genre
     const response = await fetch(api_url)
     const data = await response.json();
     console.log(data)
