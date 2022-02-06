@@ -4,7 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import sys
 
 
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id="17037de2bf4f479b817cc1d40ef2d4c2", client_secret="1b8adca14e0741dfba733d83754ab015"))
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id="", client_secret=""))
 # example: 
 #results = spotify.search(q='genre:pop', limit=10, type="track", market=["US"])
 #print(results)
@@ -12,7 +12,6 @@ spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(cl
 
 def getsongs(mood, genre, limit, offset=0):
     print(genre)
-    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id="17037de2bf4f479b817cc1d40ef2d4c2", client_secret="1b8adca14e0741dfba733d83754ab015"))
     genremusic = spotify.search(q="genre:"+genre, limit=limit, type="track", market="US")
     length = len(genremusic["tracks"]["items"])
 
