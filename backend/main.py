@@ -1,8 +1,23 @@
 import flask, time
 import spotifyhook
+from flask_cors import CORS
 
 app = flask.Flask('API')
+CORS(app)
+@app.after_request
+def after_request(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    response.headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS, PUT, DELETE"
+    response.headers["Access-Control-Allow-Headers"] = "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization"
+    return response
+
 genres = None
+
+
+
+
+
 @app.route("/get", methods=['GET'])
 def getsongs():
     mood = flask.request.args.get('mood')

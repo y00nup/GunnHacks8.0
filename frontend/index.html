@@ -3,83 +3,104 @@
   <head>
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Title</title>
+    <script src="script.js"></script>
+    <title>Moodify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <style>
+      .content {
+        text-align: center;
+        padding: 30px;
+        margin: 0px auto;
+      }
+   
+      .details {
+        margin-left: auto;
+        margin-right: auto;
+      }
+   
+      img {
+        border-radius: 5px;
+        box-shadow: black;
+      }
+   
+      table,
+      td {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
 
   <head>
+
+    <h1>Moodify</h1>
   
   <body>
-    <h1> Random Music Generator</h1>
+    <h2>Generate music based off your mood and preferred genre!</h2>
 
-    <p> 
-      In this website you can get music reccomended to you thoruhg either genre or mood which can be deteced by checking the boxes 
-    </p>
+ 
     
     <p>
-      Mood:                 
+      Select your mood:                 
     </p>
 
-    <button>
+    <button id="happy" onclick="setmood('happy')">
       Happy
     </button>
 
-    <button>
+    <button id="sad" onclick="setmood('sad')">
       Sad
     </button>
 
-    <button>
+    <button id="angry" onclick="setmood('angry')">
       Angry
     </button>
 
     <p>
-      Genre:
+      Select your preferred genre:
     </p>
 
-    <button>
+    <button id="pop" onclick="setgenre('pop')">
       Pop
     </button>
 
-    <button>
+    <button id="rock" onclick="setgenre('rock')">
       Rock
     </button>
 
-    <button>
+    <button id="rnb" onclick="setgenre('rnb')">
       R&B
     </button>
 
-    <button>
+    <button id="country" onclick="setgenre('country')">
       Country
     </button>
     
-    <button>
+    <button id="jazz" onclick="setgenre('jazz')">
       Jazz
     </button>
 
-    <button>
+    <button id="metal" onclick="setgenre('metal')">
       Metal
     </button>
 
-    <button>
+    <button id="blues" onclick="setgenre('blues')">
       Blues
     </button>
 
-    <button>
+    <button id="classical" onclick="setgenre('classical')">
       Classical
     </button>
 
-    
-
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <button>
+    <br><br><br><br>
+    <button onclick="getData()">
       Search
     </button>
 
+    <div id="result"></div>
 
 
 
