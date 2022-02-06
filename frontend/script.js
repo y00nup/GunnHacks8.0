@@ -23,7 +23,15 @@ async function getData() {
     console.group(api_url)
     const response = await fetch(api_url)
     const data = await response.json();
-    
+    console.log(data)
+    //info = JSON.parse(data);
+    info = data
+    for (var i=0; i<info["songs"].length; i++) {
+        const frame = document.createElement("iframe");
+        const node = document.createTextNode("<iframe src='https://open.spotify.com/embed/track/"+info["songs"][i]["id"]+" width='300' height='380 frameborder='0' allowtransparency='true' allow='encrypted-media' </iframe>")
+    }
+    console.log("a")
+    //<iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 }
   
 
